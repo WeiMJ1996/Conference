@@ -1,0 +1,30 @@
+page-add-publish {
+    ion-grid{
+        margin-top:0px !important; 
+        padding-top:opx !important; 
+        align-items: center;
+        background-color: white;
+    }
+    .preStyle{
+        padding: 4px 5px 4px 5px !important;
+        height: 45px !important;
+        p{
+            color: #999999;
+            width: 80px;
+            padding: 2px 2px 4px 2px !important;
+            border:1px solid #cfcdcd;
+            text-align: center;
+        }
+    }
+    .getStyle{
+        padding: 4px 5px 4px 5px !important;
+        height: 45px !important;
+        p{
+            color: #488aff;
+            width: 80px;
+            padding: 2px 2px 4px 2px !important;
+            border:1px solid #cfcdcd;
+            text-align: center;
+        }
+    }
+}

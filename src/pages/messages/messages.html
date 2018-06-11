@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>消息</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding #item *ngFor="let notice of notices">
+      <button ion-item detail-none>
+        <p>{{notice['title']}}</p>
+        <p>{{notice['content']}}</p>
+        <p>{{notice['createtime'] | date:"MM-dd HH:mm:ss"}}</p>
+      </button>
+      <div class="noread">
+          <ion-icon name="noread"></ion-icon>
+      </div>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="delete(notice['id'])">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

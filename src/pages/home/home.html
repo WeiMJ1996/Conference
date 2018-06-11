@@ -1,0 +1,41 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-searchbar placeholder="搜索会议室"></ion-searchbar>
+    <ion-icon name="publish" class="top_header_msg_icon" (click)="goAddPublish()">
+    </ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <!-- 发布的会议室列表 -->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="下拉刷新" refreshingSpinner="circles" refreshingText="刷新...">
+    </ion-refresher-content>
+    <ion-refresher-content>
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-card *ngFor="let item of publishes;let i=index" (click)="toPublish(item)">
+    <button ion-item>
+      <ion-thumbnail item-start>
+        <img src="{{item['rpic']}}" />
+      </ion-thumbnail>
+      <h3>{{item['title']}}</h3>
+      <p>
+        <span>可容纳人数：{{item['users']}}</span>|
+        <span *ngIf="item['media']==1">提供多媒体</span>
+      </p>
+      <p>
+        <span class="tag">{{item['tag']}}</span>
+      </p>
+    </button>
+    <ion-item class="cardfooter">
+      <ion-avatar item-start>
+        <img src="{{item['upic']}}" />
+      </ion-avatar>
+      <p>{{item['uName']}}</p>
+      <p>{{item['address']}}</p>
+    </ion-item>
+  </ion-card>
+</ion-content>

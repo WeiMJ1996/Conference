@@ -1,0 +1,85 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.headSheet{
+    .action-sheet-group{
+        .action-sheet-title{
+            padding: 1rem;
+            font-size: 1.8rem;
+            color: #000;
+            background: #fefef9;
+        }
+        .disable-hover{
+            min-height: 50px;
+            font-size: 1.6rem;
+            color: #000;
+            // background: #fff;
+            background: rgba(248, 247, 247, 0.986);
+            position: relative;
+            .button-inner{
+                // justify-content: flex-start;
+                position: relative;
+                justify-content: center;
+                .icon {
+                    position: absolute;
+                    // right: 0;
+                    // padding-right: 0;
+                    left: 0;
+                    padding-left: 50px;
+                }
+            }
+        }
+        .action-sheet-cancel{
+            background: #fefef9;
+            .button-inner{
+                justify-content: center;
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+.projectList{
+    .alert-wrapper{
+        .alert-title{
+            font-size: 18px;
+            text-align: center;
+        }
+        .alert-message{
+            margin-left: 5px;
+            font-size: 16px;
+            text-align: center;
+        }
+        border-radius: 3px;
+        background: #fff;
+        .alert-title{
+            font-weight: normal;
+        }
+        .button-inner{
+            position: relative;
+            padding:0 10px;
+        }
+        .button-inner{
+            color: #8c8c8c;
+        }
+        .alert-button:last-child{
+            font-weight: normal;
+            span{
+                color: #3a71dc;
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+<!--
+  Generated template for the PublishPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{publish['title']}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="header">
+    <ion-item no-lines detail-none>
+      <ion-avatar item-start>
+        <img src="{{publish['upic']}}" />
+      </ion-avatar>
+      <p class="uName">{{publish['uName']}}</p>
+      <p>{{ publish['createTime'] | date:"MM-dd HH:mm" }}</p>
+    </ion-item>
+  </div>
+  <div class="publish-content">
+    <ion-item detail-none>
+      <p class="title">{{publish['title']}}</p>
+      <p class="tag">{{publish['tag']}}</p>
+      <p class="address">详细地址：{{publish['address']}}</p>
+    </ion-item>
+    <img src="{{publish['rpic']}}">
+    <p class="views">{{publish['views']}}次查看</p>
+  </div>
+
+  <div class="desc">
+    <ion-item detail-none *ngIf="room != null">
+      <div class="desc-header">
+        <p>详细内容</p>
+      </div>
+      <p [innerHTML]="assembleHTML(room['desc'])"></p>
+      <p [innerHTML]="assembleHTML(room['comments'])"></p>
+    </ion-item>
+  </div>
+</ion-content>
+<ion-footer *ngIf="userType == 2 || userType == 3">
+  <div>
+    <button ion-button class="contcat" outline>
+      <ion-icon name="chatbubbles-outline"></ion-icon>  与Ta联系</button>
+    <button ion-button class="get" (click)="apply()" *ngIf="ispublish == false">
+      <ion-icon name="checkmark-circle-outline"></ion-icon>  申请</button>
+      <button ion-button class="get" disabled *ngIf="ispublish == true">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>  申请</button>
+  </div>
+</ion-footer>

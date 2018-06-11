@@ -1,0 +1,76 @@
+<!--
+  Generated template for the AddPublishPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar>
+    <button ion-button color="light" small (click)="dismiss()">
+      <span ion-text color="primary" showWhen="ios">取消</span>
+      <ion-icon name="md-close" showWhen="android"></ion-icon>
+    </button>
+    <ion-buttons end>
+      <!-- <button ion-button color="light" small *ngIf="password==null||password==''||confirmPwd==null||confirmPwd==''"> -->
+      <span ion-text color="unuse" *ngIf="title==null||title==''||roomid==null||roomid==''">发布</span>
+      <!-- </button> -->
+      <button ion-button color="light" small (click)="publish()" *ngIf="title!=null&&title!=''&&roomid!=null&&roomid!=''">
+        <span ion-text color="primary">发布</span>
+      </button>
+    </ion-buttons>
+    <ion-title>发布信息</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-label>输入标题</ion-label>
+    <ion-item>
+      <ion-textarea placeholder="请输入标题" [(ngModel)]="title"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>会议室</ion-label>
+      <ion-select okText="确定" cancelText="取消" [(ngModel)]="ind" (ngModelChange)="showinfo()">
+        <ion-option *ngFor="let item of roomlist;let i=index" value={{i}} (change)="showinfo()">{{item['roomname']}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>租金</ion-label>
+      <ion-input placeholder="元/小时" clearInput clearOnEdit maxlength="4" dir="rtl" [(ngModel)]="price"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-grid>
+    <ion-label>点击选择您的会议室标签</ion-label>
+    <ion-row>
+      <ion-col class="{{tagStyle1}}">
+        <p (click)="getTag1()">环境优雅</p>
+      </ion-col>
+      <ion-col class="{{tagStyle2}}">
+        <p (click)="getTag2()">董事会议</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="{{tagStyle3}}">
+        <p (click)="getTag3()">培训讲座</p>
+      </ion-col>
+      <ion-col class="{{tagStyle4}}">
+        <p (click)="getTag4()">年会活动</p>
+      </ion-col>
+      <ion-col class="{{tagStyle5}}">
+        <p (click)="getTag5()">沙龙集会</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list>
+    <ion-label>会议室描述</ion-label>
+    <ion-item>
+      <ion-textarea [(ngModel)]="roomDesc" readonly></ion-textarea>
+    </ion-item>
+    <ion-label>会议室备注</ion-label>
+    <ion-item>
+      <ion-textarea [(ngModel)]="roomComments" readonly></ion-textarea>
+    </ion-item>
+  </ion-list>
+</ion-content>

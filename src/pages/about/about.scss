@@ -1,0 +1,15 @@
+page-about {
+    .card{
+        margin: 0px;
+        width: 100%;
+    }
+    .info{
+        margin-top: 10px;
+    }
+    .aboutSet{
+        ion-list{
+            padding-top: 0px;
+            margin-top: -10px;
+        }
+    }
+}

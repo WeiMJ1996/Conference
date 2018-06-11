@@ -1,0 +1,61 @@
+page-order-info {
+    .enterprise{
+        background-color: #ffffff;
+        height: 40px;
+        p{
+            padding-top: 10px;
+            font-weight: 800;
+            margin-top: 0px;
+            margin-left: 10px;
+        }
+        .label1{
+            margin-top: -38px;
+            padding-right: 10px;
+            position: relative !important;
+            float:right;
+            color: forestgreen;
+        }
+        .label2{
+            margin-top: -38px;
+            padding-right: 10px;
+            position: relative !important;
+            float:right;
+            color: rgb(233, 79, 18);
+        }
+        .label3{
+            margin-top: -38px;
+            padding-right: 10px;
+            position: relative !important;
+            float:right;
+            color: rgb(236, 12, 12);
+        }
+    }
+    .content{
+        background-color: #ffffff;
+    }
+
+    ion-footer{
+        .start{
+            border: 0px;
+            margin: 0px;
+            width: 32%;
+            height: 55px;
+        }
+        .end{
+            border: 0px;
+            margin: 0px;
+            width: 32%;
+            height: 55px;
+        }
+        .fulfil{
+            border: 0px;
+            margin: 0px;
+            width: 32%;
+            height: 55px;
+        }
+        ion-icon{
+            margin-right: 15px;
+        }
+    }
+
+}

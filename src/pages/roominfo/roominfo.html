@@ -1,0 +1,46 @@
+<!--
+  Generated template for the RoominfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+  <ion-toolbar>
+    <button ion-button color="light" small (click)="dismiss()">
+      <span ion-text color="primary" showWhen="ios">取消</span>
+      <ion-icon name="md-close" showWhen="android"></ion-icon>
+    </button>
+    <ion-buttons end>
+      <button ion-button color="light" small (click)="change()">
+        <span ion-text color="primary">修改</span>
+      </button>
+    </ion-buttons>
+    <ion-title>会议室详情</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary">会议室名称</ion-label>
+      <ion-input [(ngModel)]="roomName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">会议室地址</ion-label>
+      <ion-input [(ngModel)]="roomAddress"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" type="number">可容纳人数</ion-label>
+      <ion-input [(ngModel)]="roomUsers"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">是否有多媒体</ion-label>
+      <ion-toggle [(ngModel)]="hasMedia"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea [(ngModel)]="roomComments" rows="6"></ion-textarea>
+    </ion-item>
+  </ion-list>
+</ion-content>

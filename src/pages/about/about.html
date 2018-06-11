@@ -1,0 +1,79 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>我</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="notLogin">
+    <ion-list class="info">
+      <button ion-item (click)="goLogin()">
+        <ion-thumbnail item-start>
+          <img [src]="headface" />
+        </ion-thumbnail>
+        <h2>会议室管理平台</h2>
+        <p>点击登录</p>
+        <ion-icon name="qrcode" item-end></ion-icon>
+      </button>
+    </ion-list>
+  </div>
+
+  <div *ngIf="isLogin">
+    <ion-list class="info">
+      <button ion-item (click)="goUser()">
+        <ion-thumbnail item-start>
+          <img src="{{headface}}" />
+        </ion-thumbnail>
+        <h2>{{UserName}}
+          <p>【{{UserTypeAlias}}】</p>
+        </h2>
+        <p>查看或编辑个人信息</p>
+        <ion-icon name="qrcode" item-end></ion-icon>
+      </button>
+    </ion-list>
+  </div>
+
+  <div class="aboutSet">
+    <ion-list>
+      <button ion-item *ngIf="UserType==1" (click)="goRooms()">
+        <h2>我的会议室</h2>
+        <ion-icon name="orders" item-end></ion-icon>
+      </button>
+      <button ion-item *ngIf="UserType==1" (click)="goUserManager()">
+        <h2>用户管理</h2>
+        <ion-icon name="manager" item-end></ion-icon>
+      </button>
+    </ion-list>
+
+
+    <ion-list>
+      <button ion-item (click)="qrcode()">
+        <h2>扫描二维码</h2>
+        <ion-icon name="qr-scanner" item-end></ion-icon>
+      </button>
+      <button ion-item>
+        <h2>申请流程</h2>
+        <ion-icon name="liucheng" item-end></ion-icon>
+      </button>
+    </ion-list>
+
+    <ion-list>
+      <button ion-item (click)="gofeedback()">
+        <h2>问题与反馈</h2>
+        <ion-icon name="feedback" item-end></ion-icon>
+      </button>
+      <button ion-item>
+        <h2>关于平台</h2>
+        <ion-icon name="pingtai" item-end></ion-icon>
+      </button>
+    </ion-list>
+
+    <ion-list>
+      <button ion-item>
+        <h2>系统设置</h2>
+        <ion-icon name="shezhi" item-end></ion-icon>
+      </button>
+    </ion-list>
+  </div>
+</ion-content>

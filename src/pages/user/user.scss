@@ -1,0 +1,24 @@
+page-user {
+    .info{
+        margin-top: 10px;
+        button{
+            height: auto;
+            p{
+                font-size: 16px;
+                margin-top: 18px;
+            }
+        }
+    }
+    .device{
+        margin-top: 0px;
+    }
+    .bottom{
+        margin-top: -25px;
+        button{
+            margin-top: 0px;
+            margin-left: 55px;
+            width: 60%;
+            height: 35px;
+        }
+    }
+}
